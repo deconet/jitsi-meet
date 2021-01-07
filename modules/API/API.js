@@ -73,6 +73,10 @@ let videoAvailable = true;
  */
 function initCommands() {
     commands = {
+        'set-local-storage': ({key, value}) => {
+            console.log(`setting local storage with key ${key} and value ${value}`)
+            localStorage.setItem(key, value)
+        },
         'display-name': displayName => {
             sendAnalytics(createApiEvent('display.name.changed'));
             APP.conference.changeLocalDisplayName(displayName);
