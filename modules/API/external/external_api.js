@@ -318,7 +318,9 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
 
     this._frame = document.createElement('iframe')
     if (roleOnExpand === 'host') {
-      this._frame.allow = 'camera; microphone; display-capture'
+      this._frame.allow = 'camera; microphone; display-capture; autoplay'
+    } else {
+      this._frame.allow = 'autoplay'
     }
     this._frame.src = this._url
     this._frame.name = frameName
